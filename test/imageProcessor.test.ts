@@ -2,6 +2,7 @@ import { mock, mockReset } from "jest-mock-extended";
 import { ImageProcessingLibrary } from "../src/imageProcessingLibrary";
 import { ImageProcessor } from "../src/imageProcessor";
 import { FileStorageLibrary } from "../src/fileStorageLibrary";
+import { InvalidImageException } from "../src/Errors/invalidImageException";
 
 
 describe('ImageProcessor tests', () => {
@@ -29,6 +30,20 @@ describe('ImageProcessor tests', () => {
         })
     })
 
+    describe('Error path', () => {
+        it('should image is not jpg', async () => {
+            // Arrange
+            /*const error = new Error("Invalid image format. Only JPG images are supported.");
+            const expectedError=new InvalidImageException("Database error happened.", error);
+            mockDbClient.saveIntoDatabase.mockImplementation(() => { throw error });*/
+    
+            // Act and Assert
+            /*await expect(sut.migrate()).rejects.toThrow(expectedError);
+            expect(mockApiClient.downloadUsernames).toBeCalledTimes(1);
+            expect(mockDbClient.saveIntoDatabase).toBeCalledTimes(1);
+            expect(mockDbClient.saveIntoDatabase).toBeCalledWith(apiResult);*/
+        })
 
+    })
 })
 
