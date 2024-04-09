@@ -5,7 +5,7 @@ describe('imageProcessingLibrary tests', () => {
     it('should file processing is complete', async () => {
         // Arrange
         const sut = new ImageProcessingLibrary();
-        const message= "Saving file content face to path 1.jpg";
+        const message= "Processing image from to ";
         const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();
 
         // Act
@@ -13,5 +13,6 @@ describe('imageProcessingLibrary tests', () => {
 
         // Assert
         expect(consoleLogSpy).toBeCalledTimes(2);
+        //expect(consoleLogSpy).toHaveBeenCalledWith(message);
     })
 })

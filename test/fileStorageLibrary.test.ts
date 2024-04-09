@@ -12,5 +12,6 @@ describe('fileStorageLibrary tests', () => {
 
         // Assert
         expect(consoleLogSpy).toBeCalledTimes(2);
+        //expect(consoleLogSpy).toHaveBeenCalledWith(message);
     })
 })
