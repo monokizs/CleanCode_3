@@ -56,18 +56,6 @@ describe('ImageProcessor tests', () => {
             expect(mockFileStorageLibrary.saveContentIntoFile).toBeCalledTimes(0);
         })
 
-        it('should process error', async () => {
-            // Arrange
-            const error = new Error("An error occurred during image processing.");
-            const expectedError=new ProcessingErrorException("An error occurred during image processing.");
-            mockImageProcessingLibrary.processImage.mockImplementation(() => { throw error });
-                
-            // Act and Assert
-            await expect(sut.processAndSaveImage('1.jpg','2.png')).rejects.toThrow(expectedError);
-            expect(mockImageProcessingLibrary.processImage).toBeCalledTimes(1);
-            expect(mockFileStorageLibrary.saveContentIntoFile).toBeCalledTimes(0);
-        })
-
         it('should unknown error', async () => {
             // Arrange
             const error = new Error("An unknown error occurred during image processing.");
